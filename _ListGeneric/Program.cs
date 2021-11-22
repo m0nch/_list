@@ -158,7 +158,7 @@ namespace ListImplementation
                 int newCapacity = _items.Length == 0 ? _defaultCapacity : _items.Length * 2;
                 // Allow the list to grow to maximum possible capacity (~2G elements) before encountering overflow.
                 // Note that this check works even when _items.Length overflowed thanks to the (uint) cast
-                if ((uint)newCapacity > 0X7FEFFFFF) newCapacity = 0x7FFFFFC7;
+                if ((uint)newCapacity > 0X7FEFFFFF) newCapacity = 0X7FEFFFFF;
                 if (newCapacity < min) newCapacity = min;
                 Capacity = newCapacity;
             }

@@ -242,7 +242,7 @@ namespace _ArrayList
             if (_items.Length < min)
             {
                 int newCapacity = _items.Length == 0 ? _defaultCapacity : _items.Length * 2;
-                if ((uint)newCapacity > 0X7FEFFFFF) newCapacity = 0x7FFFFFC7;
+                if ((uint)newCapacity > 0X7FEFFFFF) newCapacity = 0X7FEFFFFF;
                 if (newCapacity < min) newCapacity = min;
                 Capacity = newCapacity;
             }
